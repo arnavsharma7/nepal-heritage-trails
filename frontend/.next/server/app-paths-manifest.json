@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/experience/[id]/page": "app/experience/[id]/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/impact/page": "app/impact/page.js",
+  "/marketplace/page": "app/marketplace/page.js",
+  "/page": "app/page.js",
+  "/provider/page": "app/provider/page.js",
+  "/trail-builder/page": "app/trail-builder/page.js"
+}

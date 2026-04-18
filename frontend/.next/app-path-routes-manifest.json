@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/page": "/admin",
+  "/dashboard/page": "/dashboard",
+  "/experience/[id]/page": "/experience/[id]",
+  "/favicon.ico/route": "/favicon.ico",
+  "/impact/page": "/impact",
+  "/marketplace/page": "/marketplace",
+  "/page": "/",
+  "/provider/page": "/provider",
+  "/trail-builder/page": "/trail-builder"
+}
