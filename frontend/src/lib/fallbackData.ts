@@ -2,6 +2,24 @@
 // Fallback Data — Used when backend is not running
 // ============================================================
 
+export const samplePanoramas = [
+    {
+        experienceId: "exp-004",
+        title: "Bhaktapur Hanuman Ghat 360",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Hanuman_Ghat.jpg/2560px-Hanuman_Ghat.jpg",
+    },
+    {
+        experienceId: "exp-005",
+        title: "Mardi Himal 360",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Mardi_Himal_%28Fishtail_Mountain%29_360.jpg/2560px-Mardi_Himal_%28Fishtail_Mountain%29_360.jpg",
+    },
+    {
+        experienceId: "exp-010",
+        title: "Ram Mandir 360 Nepal",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ram_Mandir_360_View_Nepal.jpg/2560px-Ram_Mandir_360_View_Nepal.jpg",
+    },
+];
+
 export const fallbackExperiences = [
     {
         id: "exp-001",
@@ -76,6 +94,7 @@ export const fallbackExperiences = [
         total_reviews: 203,
         total_bookings: 580,
         community_impact_score: 8.5,
+        panorama_url: samplePanoramas.find(panorama => panorama.experienceId === "exp-004")?.imageUrl,
         amenities: ["Expert guide", "Museum entry", "Artisan workshop visit", "Cultural briefing", "Refreshments"],
         languages: ["Nepali", "English", "Hindi", "Newari"],
     },
@@ -95,6 +114,7 @@ export const fallbackExperiences = [
         total_reviews: 68,
         total_bookings: 190,
         community_impact_score: 9.0,
+        panorama_url: samplePanoramas.find(panorama => panorama.experienceId === "exp-005")?.imageUrl,
         amenities: ["Yoga sessions", "Meditation", "Organic meals", "Eco-lodge", "Singing bowls"],
         languages: ["Nepali", "English"],
     },
@@ -190,6 +210,7 @@ export const fallbackExperiences = [
         total_reviews: 145,
         total_bookings: 450,
         community_impact_score: 8.0,
+        panorama_url: samplePanoramas.find(panorama => panorama.experienceId === "exp-010")?.imageUrl,
         amenities: ["Expert Buddhist guide", "Meditation session", "Monastery visits", "Lunch", "Transport"],
         languages: ["Nepali", "English", "Hindi"],
     },

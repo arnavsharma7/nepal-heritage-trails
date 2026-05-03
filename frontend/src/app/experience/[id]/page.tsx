@@ -27,6 +27,7 @@ interface ExperienceDetail {
     total_reviews: number;
     total_bookings: number;
     community_impact_score: number;
+    panorama_url?: string;
     reviews?: { id: string; rating: number; title: string; comment: string; created_at: string }[];
 }
 

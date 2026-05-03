@@ -217,7 +217,7 @@ export default function TrailBuilderPage() {
                                 max="21"
                                 value={duration}
                                 onChange={e => setDuration(Number(e.target.value))}
-                                className="w-full h-2 rounded-lg appearance-none cursor-pointer"
+                                className="w-full h-2 rounded-lg cursor-pointer"
                                 style={{ accentColor: "var(--terracotta)" }}
                             />
                             <div className="flex justify-between text-xs mt-2" style={{ color: "var(--slate-medium)" }}>
@@ -254,7 +254,7 @@ export default function TrailBuilderPage() {
                                 step="5000"
                                 value={budget}
                                 onChange={e => setBudget(Number(e.target.value))}
-                                className="w-full h-2 rounded-lg appearance-none cursor-pointer"
+                                className="w-full h-2 rounded-lg cursor-pointer"
                                 style={{ accentColor: "var(--terracotta)" }}
                             />
                             <div className="flex justify-between text-xs mt-2" style={{ color: "var(--slate-medium)" }}>

@@ -1,24 +1,50 @@
-// ============================================================
-// Auth Middleware — JWT Token Verification
-// ============================================================
+import jwt from 'jsonwebtoken';
+const ACCESS_TOKEN_SECRET =
+    process.env.ACCESS_TOKEN_SECRET ||
+    process.env.JWT_SECRET ||
+    'nepal-heritage-trails-secret-key-2024';
 
-const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET || 'nepal-heritage-trails-secret-key-2024';
+function extractBearerToken(authorizationHeader) {
+    if (!authorizationHeader || typeof authorizationHeader !== 'string') {
+        return null;
+    }
+
+    const [scheme, token] = authorizationHeader.trim().split(/\s+/);
+    if (!scheme || !token || scheme.toLowerCase() !== 'bearer') {
+        return null;
+    }
+
+    return token;
+}
 
 function authenticateToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    const token = extractBearerToken(req.get('authorization'));
 
     if (!token) {
-        return res.status(401).json({ error: 'Access token required' });
+        return res.status(401).json({
+            success: false,
+            error: 'Access token required in Authorization header as Bearer <token>'
+        });
     }
 
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded;
+        const decoded = jwt.verify(token, ACCESS_TOKEN_SECRET);
+        const fullName = decoded.fullName || decoded.fullname || decoded.full_name || null;
+
+        req.user = {
+            id: decoded.id,
+            email: decoded.email,
+            fullName,
+            fullname: fullName,
+            role: decoded.role || 'tourist'
+        };
+
         next();
     } catch (err) {
-        return res.status(403).json({ error: 'Invalid or expired token' });
+        return res.status(401).json({
+            success: false,
+            error: 'Invalid or expired token'
+        });
     }
 }
 
@@ -31,4 +57,4 @@ function authorizeRoles(...roles) {
     };
 }
 
-module.exports = { authenticateToken, authorizeRoles };
+export { authenticateToken, authorizeRoles };

@@ -1,3 +1,13 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/demo/page": "app/demo/page.js",
+  "/experience/[id]/page": "app/experience/[id]/page.js",
+  "/impact/page": "app/impact/page.js",
+  "/login/page": "app/login/page.js",
+  "/marketplace/page": "app/marketplace/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/test/page": "app/test/page.js",
+  "/trail-builder/page": "app/trail-builder/page.js"
 }
